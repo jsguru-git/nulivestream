@@ -1,0 +1,23 @@
+{
+  "name": "nulivestream",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@videojs/http-streaming": "^1.1.0",
+    "aws-amplify": "^0.4.3",
+    "hls.js": "^0.10.1",
+    "react": "^16.4.0",
+    "react-bootstrap": "^0.32.1",
+    "react-dom": "^16.4.0",
+    "react-router-bootstrap": "^0.24.4",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.1.4",
+    "videojs-contrib-hls": "^5.14.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
