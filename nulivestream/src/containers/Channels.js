@@ -68,6 +68,8 @@ export default class Channels extends Component {
 
   renderVideoPlayer(channel, server){
       console.log(this.state.posterURL)
+      console.log(channel)
+      console.log(server)
       // const videoJsOptions = {
       //     autoplay: true,
       //     controls: true,
@@ -79,11 +81,23 @@ export default class Channels extends Component {
       //     poster: this.state.posterURL,
       //   }
       // return <VideoPlayer { ...videoJsOptions } />
+
+      const videoJsOptions = {
+        isVideoChild: true,
+        src: 'https://'+server.cdn_adress+'/'+channel.streamkey+'/'+channel.streamkey+'.m3u8',
+        type: "application/x-mpegURL",
+        poster: this.state.posterURL,
+        logo: this.state.logoURL,
+      }
+
+      // return (
+      //   <VideoPlayer
+      //     isVideoChild
+      //     src="https://d2zihajmogu5jn.cloudfront.net/bipbop-advanced/bipbop_16x9_variant.m3u8"
+      //   />
+      // );
       return (
-        <VideoPlayer
-          isVideoChild
-          src="https://d2zihajmogu5jn.cloudfront.net/bipbop-advanced/bipbop_16x9_variant.m3u8"
-        />
+        <VideoPlayer { ...videoJsOptions } />
       );
   }
 

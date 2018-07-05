@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Player } from 'video-react';
-import Hls from "hls.js"; 
+import Hls from "hls.js";
+import cover from './video_cover.png';
 import "../../node_modules/video-react/dist/video-react.css";
 // export default class VideoPlayer extends Component {
 
@@ -62,7 +63,8 @@ export default class VideoPlayer extends Component {
 
   render() {
     return (
-      <Player>
+      // <Player ref="player" poster={cover}>
+      <Player ref="player" poster={this.props.poster}>
         <source 
           src={this.props.src}
           type={this.props.type || 'application/x-mpegURL'}
