@@ -1,7 +1,10 @@
 import React, { Component } from "react";
 import { API, Storage } from "aws-amplify";
 import { FormGroup, FormControl, ControlLabel, Grid, Row, Col, PageHeader } from "react-bootstrap";
+import { Player } from 'video-react';
 import VideoPlayer from "../components/VideoPlayer";
+import "../../node_modules/video-react/dist/video-react.css";
+import cover from './video_cover.png';
 
 export default class Channels extends Component {
   constructor(props) {
@@ -84,7 +87,8 @@ export default class Channels extends Component {
 
       const videoJsOptions = {
         isVideoChild: true,
-        src: 'https://'+server.cdn_adress+'/'+channel.streamkey+'/'+channel.streamkey+'.m3u8',
+        // src: 'https://'+server.cdn_adress+'/'+channel.streamkey+'/'+channel.streamkey+'.m3u8',
+        src: "https://d2zihajmogu5jn.cloudfront.net/bipbop-advanced/bipbop_16x9_variant.m3u8",
         type: "application/x-mpegURL",
         poster: this.state.posterURL,
         logo: this.state.logoURL,
@@ -97,7 +101,10 @@ export default class Channels extends Component {
       //   />
       // );
       return (
-        <VideoPlayer { ...videoJsOptions } />
+        // <Player ref="player" poster={this.props.poster}>
+        <Player ref="player" poster={cover}>
+          <VideoPlayer { ...videoJsOptions } />
+        </Player>
       );
   }
 
