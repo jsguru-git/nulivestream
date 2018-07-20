@@ -1,0 +1,17 @@
+export default {
+  s3: {
+    REGION: "XX-XXXX-X",
+    BUCKET: "YOUR_S3_UPLOADS_BUCKET_NAME"
+  },
+  apiGateway: {
+    REGION: "XX-XXXX-X",
+    URL: "YOUR_API_GATEWAY_URL"
+  },
+  cognito: {
+    REGION: "XX-XXXX-X",
+    USER_POOL_ID: "XX-XXXX-X_abcd1234",
+    APP_CLIENT_ID: "a1b2c3d4e5f6g7h8i9j0k1l2m3",
+    IDENTITY_POOL_ID: "XX-XXXX-X:XXXXXXXX-XXXX-1234-abcd-1234567890ab"
+},
+  MAX_ATTACHMENT_SIZE: 5000000
+};
